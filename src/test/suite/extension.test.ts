@@ -19,4 +19,8 @@ suite("Extension Test Suite", () => {
     assert.ok(extension.isActive);
     assert.ok(languageClient);
   });
+
+  test("a test sholud be failed", () => {
+    assert.ok(false);
+  });
 });
