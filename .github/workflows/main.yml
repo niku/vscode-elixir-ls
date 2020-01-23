@@ -75,3 +75,19 @@ jobs:
       - name: Run tests
         run: |
           npm test
+
+  build-on-windows-latest:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v2
+      - name: Checkout submodules
+        run: |
+          auth_header="$(git config --local --get http.https://github.com/.extraheader)"
+          git submodule sync --recursive
+          git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update --init --force --recursive --depth=1
+      - name: Install Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: "8.x"
