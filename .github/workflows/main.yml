@@ -3,7 +3,7 @@ name: CI
 on: [push]
 
 jobs:
-  build:
+  build-on-ubuntu-latest:
     runs-on: ubuntu-latest
 
     steps:
@@ -42,3 +42,19 @@ jobs:
           npm test
         env:
           DISPLAY: :99.0
+
+  build-on-macos-latest:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v2
+      - name: Checkout submodules
+        run: |
+          auth_header="$(git config --local --get http.https://github.com/.extraheader)"
+          git submodule sync --recursive
+          git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update --init --force --recursive --depth=1
+      - name: Install Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: "8.x"
