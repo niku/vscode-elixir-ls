@@ -62,3 +62,14 @@ jobs:
         run: |
           brew update
           brew install elixir
+      - name: Resolve elixir-ls dependencies
+        run: |
+          cd elixir-ls
+          mix deps.get
+      - name: Resolve vscode-elixir-ls dependencies
+        run: |
+          npm install
+          npm run compile
+      - name: Run tests
+        run: |
+          npm test
