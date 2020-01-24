@@ -95,7 +95,5 @@ jobs:
       - name: Install Elixir
         run: |
           cinst elixir
-      - name: Install rebar and hex
-        run: |
-          mix local.rebar --force
-          mix local.hex --force
+          refreshenv
+          $env:Path -split ";"
