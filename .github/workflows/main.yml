@@ -96,6 +96,6 @@ jobs:
         shell: bash
         run: |
           cinst elixir
-          ls -l /c:/ProgramData/chocolatey/bin
+          ls -l /
           which erl
           which elixir
