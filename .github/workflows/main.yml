@@ -96,5 +96,5 @@ jobs:
         shell: bash
         run: |
           cinst elixir
-          elixir --version
-          mix --version
+          env | grep PATH
+          ls -l C:\ProgramData\chocolatey\bin
