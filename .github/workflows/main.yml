@@ -95,5 +95,6 @@ jobs:
       - name: Install Elixir
         run: |
           cinst elixir
+          refreshenv
           mix local.rebar --force
           mix local.hex --force
