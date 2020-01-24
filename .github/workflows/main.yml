@@ -96,5 +96,6 @@ jobs:
         shell: bash
         run: |
           cinst elixir
-          env | grep PATH
-          ls -l C:\ProgramData\chocolatey\bin
+          ls -l /c:/ProgramData/chocolatey/bin
+          which erl
+          which elixir
