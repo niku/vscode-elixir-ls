@@ -96,4 +96,4 @@ jobs:
         run: |
           cinst elixir
           refreshenv
-          $env:Path -split ";"
+          echo ${env:PATH}
