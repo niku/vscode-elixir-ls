@@ -93,11 +93,8 @@ jobs:
         with:
           node-version: "8.x"
       - name: Install Elixir
+        shell: bash
         run: |
           cinst elixir
-      - name: Install Elixir
-        run: |
-          refreshenv
-          echo ${env:PATH}
           elixir --version
           mix --version
