@@ -95,5 +95,9 @@ jobs:
       - name: Install Elixir
         run: |
           cinst elixir
+      - name: Install Elixir
+        run: |
           refreshenv
           echo ${env:PATH}
+          elixir --version
+          mix --version
