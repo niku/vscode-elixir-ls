@@ -96,6 +96,11 @@ jobs:
         shell: bash
         run: |
           cinst elixir
-          ls -l /
+      - name: Check Elixir
+        shell: bash
+        run: |
+          ls -l /C/ProgramData/chocolatey/lib/Elixir
           which erl
+          ls -l /C/ProgramData/chocolatey/bin/
+          env
           which elixir
