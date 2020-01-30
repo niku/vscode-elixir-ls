@@ -97,6 +97,6 @@ jobs:
           cinst elixir
       - name: Check Elixir
         run: |
-          $Env:Path
-          Get-Children -Path C:\ProgramData\chocolately -Recurse -Filter mix.ps1
+          $Env:Path.split(';')
+          Get-ChildItem -Path C:\ProgramData\chocolately -Recurse -Filter mix.ps1
           mix -v
