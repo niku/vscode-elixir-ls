@@ -98,4 +98,6 @@ jobs:
       - name: Check Elixir
         run: |
           $env:Path += ";C:\ProgramData\chocolately\lib\Elixir\bin"
+          $env:Path.split(';') | Select-String -Pattern 'bin'
+          Get-ChildItem -Path C:\ProgramData\chocolately\lib\Elixir\bin
           mix --version
