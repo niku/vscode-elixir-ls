@@ -95,7 +95,7 @@ jobs:
       - name: Install Elixir
         run: |
           cinst elixir
-          Get-Content C:¥ProgramData¥chocolatey¥logs¥chocolatey.log | Select-String -Pattern 'bin'
+          Get-Content C:\ProgramData\chocolatey\logs\chocolatey.log | Select-String -Pattern 'bin'
           Get-ChildItem -Path C:\ProgramData\chocolately\lib\Elixir
       - name: Check Elixir
         run: |
