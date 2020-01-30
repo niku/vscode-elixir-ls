@@ -97,7 +97,5 @@ jobs:
           cinst elixir
       - name: Check Elixir
         run: |
-          $Env:Path.split(';') | Select-String -Pattern 'bin'
-
-          Get-ChildItem -Path C:\ProgramData\chocolately\lib\ -Recurse -Filter mix.ps1
-          mix -v
+          $env:Path += ";C:\ProgramData\chocolately\lib\Elixir\bin"
+          mix --version
