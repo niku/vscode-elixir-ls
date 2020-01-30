@@ -97,6 +97,7 @@ jobs:
           cinst elixir
       - name: Check Elixir
         run: |
-          $Env:Path.split(';')
-          Get-ChildItem -Path C:\ProgramData\chocolately -Recurse -Filter mix.ps1
+          $Env:Path.split(';') | Select-String -Pattern 'bin'
+
+          Get-ChildItem -Path C:\ProgramData\chocolately\lib\ -Recurse -Filter mix.ps1
           mix -v
