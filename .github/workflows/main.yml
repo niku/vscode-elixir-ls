@@ -93,14 +93,10 @@ jobs:
         with:
           node-version: "8.x"
       - name: Install Elixir
-        shell: bash
         run: |
           cinst elixir
       - name: Check Elixir
-        shell: bash
         run: |
-          ls -l /C/ProgramData/chocolatey/lib/Elixir
-          which erl
-          ls -l /C/ProgramData/chocolatey/bin/
-          env
-          which elixir
+          $Env:Path
+          Get-Children -Path C:\ProgramData\chocolately -Recurse -Filter mix.ps1
+          mix -v
