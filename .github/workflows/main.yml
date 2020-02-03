@@ -96,7 +96,7 @@ jobs:
         run: |
           cinst elixir
           echo ____
-          $env
+          Get-ChildItem env:
           echo ^^^^
           Get-ChildItem -Path $env:ChocolateyPackageFolder/bin
       - name: Check Elixir
