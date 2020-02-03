@@ -96,8 +96,7 @@ jobs:
         run: |
           cinst elixir
           echo ____
-          echo $elixirPath
-          echo $env:ChocolateyPackageFolder
+          $env:Path.split(';') | Select-String -Pattern 'bin'
           echo ^^^^
           Get-ChildItem -Path $env:ChocolateyPackageFolder/bin
       - name: Check Elixir
