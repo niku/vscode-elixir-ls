@@ -95,10 +95,7 @@ jobs:
       - name: Install Elixir
         run: |
           cinst elixir
-          echo ____
-          Get-ChildItem env:
-          echo ^^^^
-          Get-ChildItem -Path $env:ChocolateyPackageFolder/bin
+          Get-ChildItem -Path $env:ChocolateyPackageFolder
       - name: Check Elixir
         run: |
           $env:Path += ";C:\ProgramData\chocolately\lib\Elixir"
