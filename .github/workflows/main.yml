@@ -95,8 +95,10 @@ jobs:
       - name: Install Elixir
         run: |
           cinst elixir
+          echo ____
           echo $elixirPath
           echo $env:ChocolateyPackageFolder
+          echo ^^^^
           Get-ChildItem -Path $env:ChocolateyPackageFolder/bin
       - name: Check Elixir
         run: |
