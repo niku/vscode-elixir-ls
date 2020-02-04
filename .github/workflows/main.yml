@@ -94,9 +94,11 @@ jobs:
           node-version: "8.x"
       - name: Install Elixir
         run: |
-          choco install elixir -y
+          choco install elixir
           refreshenv
-          elixir --version
+          Get-ChildItem C:\ProgramData\chocolately
+          Get-ChildItem C:\ProgramData\chocolately\lib
+          Get-ChildItem C:\ProgramData\chocolately\lib\Elixir
       # - name: Check Elixir
       #   run: |
       #     $env:Path += ";C:\ProgramData\chocolately\lib\Elixir"
