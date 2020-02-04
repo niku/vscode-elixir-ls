@@ -94,12 +94,12 @@ jobs:
           node-version: "8.x"
       - name: Install Elixir
         run: |
-          choco install elixir --allow-unofficial
+          choco install elixir -y
           refreshenv
           elixir --version
-      - name: Check Elixir
-        run: |
-          $env:Path += ";C:\ProgramData\chocolately\lib\Elixir"
-          $env:Path.split(';') | Select-String -Pattern 'bin'
-          Get-ChildItem -Path C:\ProgramData\chocolately\lib\Elixir
-          mix --version
+      # - name: Check Elixir
+      #   run: |
+      #     $env:Path += ";C:\ProgramData\chocolately\lib\Elixir"
+      #     $env:Path.split(';') | Select-String -Pattern 'bin'
+      #     Get-ChildItem -Path C:\ProgramData\chocolately\lib\Elixir
+      #     mix --version
