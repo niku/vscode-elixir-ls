@@ -96,9 +96,7 @@ jobs:
         run: |
           choco install elixir
           refreshenv
-          Get-ChildItem C:\ProgramData\chocolately
-          Get-ChildItem C:\ProgramData\chocolately\lib
-          Get-ChildItem C:\ProgramData\chocolately\lib\Elixir
+          erl -version
       # - name: Check Elixir
       #   run: |
       #     $env:Path += ";C:\ProgramData\chocolately\lib\Elixir"
